@@ -1,10 +1,6 @@
 package com.algafood.algafoodapi;
 
-import com.algafood.algafoodapi.di.notificacao.NotificadorEmail;
-import com.algafood.algafoodapi.service.AtivacaoClienteService;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class AlgaConfig {

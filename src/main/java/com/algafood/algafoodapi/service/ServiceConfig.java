@@ -1,7 +1,5 @@
 package com.algafood.algafoodapi.service;
 
-import com.algafood.algafoodapi.di.notificacao.Notificador;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
