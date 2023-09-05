@@ -7,27 +7,17 @@ import com.algafood.algafoodapi.di.notificacao.TipoNotificador;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AtivacaoClienteService {
 
     @Autowired
-    @TipoNotificador(NivelUrgencia.URGENTE)
-    private Notificador notificador;
-
-    @PostConstruct
-    public void init () {
-        System.out.println("INIT");
-    }
-
-    @PreDestroy
-    public void destroy () {
-        System.out.println("DESTROY");
-    }
+    private ApplicationEventPublisher publisher;
 
     public void ativar(Cliente cliente){
         cliente.ativar();
-        notificador.notificar(cliente, "Cliente ativado com sucesso!");
+        this.publisher.publishEvent(new ClienteAtivadoEvent(cliente));
     }
 }
