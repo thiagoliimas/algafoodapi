@@ -1,18 +1,24 @@
 package com.algafood.algafoodapi.domain.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "cozinha")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cozinha {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", length = 30)
     private String nome;
 
     public Long getId() {
@@ -44,3 +50,5 @@ public class Cozinha {
         return Objects.hash(id);
     }
 }
+
+//Continuar a partir daqui: 3.5. Criando as tabelas do banco a partir das entidades

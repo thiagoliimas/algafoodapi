@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 Aqui se criou uma classe "main" para sair do contexo de web, ou seja, usar um método main
 para rodar o Spring sem que seja necessário o envio de requisições
  */
-public class ConsultaCozinhaMain {
+public class AlteraçãoCozinhaMain {
 
     public static void main(String[] args) {
 
@@ -21,8 +21,10 @@ public class ConsultaCozinhaMain {
 
         CadastroCozinha beanCadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
 
-        beanCadastroCozinha.listar().forEach(p -> System.out.println(p.getNome()));
+        Cozinha cozinha1 = new Cozinha();
+        cozinha1.setId(1L);
+        cozinha1.setNome("Brasileira");
 
-        System.out.println(beanCadastroCozinha.getByIdCozinha(2L).getNome());
+        beanCadastroCozinha.saveCozinha(cozinha1);
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 Aqui se criou uma classe "main" para sair do contexo de web, ou seja, usar um método main
 para rodar o Spring sem que seja necessário o envio de requisições
  */
-public class ConsultaCozinhaMain {
+public class ExclusaoCozinhaMain {
 
     public static void main(String[] args) {
 
@@ -23,6 +23,16 @@ public class ConsultaCozinhaMain {
 
         beanCadastroCozinha.listar().forEach(p -> System.out.println(p.getNome()));
 
-        System.out.println(beanCadastroCozinha.getByIdCozinha(2L).getNome());
+        Cozinha cozinha = new Cozinha();
+        cozinha.setId(1L);
+        cozinha.setNome("Tailandesa");
+
+         Cozinha cozinha1 = beanCadastroCozinha.getByIdCozinha(cozinha.getId());
+
+        beanCadastroCozinha.removerCozinha(cozinha1);
     }
 }
+
+//Ler: https://blog.algaworks.com/tutorial-jpa/
+
+//Continuar em: Conhecendo o padrão Aggregate do DDD
