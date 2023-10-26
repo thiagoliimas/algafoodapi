@@ -2,6 +2,7 @@ package com.algafood.algafoodapi.jpa;
 
 import com.algafood.algafoodapi.AlgafoodApiApplication;
 import com.algafood.algafoodapi.domain.model.Cozinha;
+import com.algafood.algafoodapi.domain.repository.CozinhaRepository;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
@@ -19,12 +20,12 @@ public class AlteraçãoCozinhaMain {
                 .web(WebApplicationType.NONE) //Tipo de apliação web queremos? NONE! Ou seja, nenhuma, não quermos aplicação web
                 .run(args); //Aqui simula o método main
 
-        CadastroCozinha beanCadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
+        CozinhaRepository cozinhas = applicationContext.getBean(CozinhaRepository.class);
 
         Cozinha cozinha1 = new Cozinha();
         cozinha1.setId(1L);
         cozinha1.setNome("Brasileira");
 
-        beanCadastroCozinha.saveCozinha(cozinha1);
+        cozinhas.add(cozinha1);
     }
 }

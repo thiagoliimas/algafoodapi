@@ -2,6 +2,7 @@ package com.algafood.algafoodapi.jpa;
 
 import com.algafood.algafoodapi.AlgafoodApiApplication;
 import com.algafood.algafoodapi.domain.model.Cozinha;
+import com.algafood.algafoodapi.domain.repository.CozinhaRepository;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ApplicationContext;
@@ -19,20 +20,20 @@ public class ExclusaoCozinhaMain {
                 .web(WebApplicationType.NONE) //Tipo de apliação web queremos? NONE! Ou seja, nenhuma, não quermos aplicação web
                 .run(args); //Aqui simula o método main
 
-        CadastroCozinha beanCadastroCozinha = applicationContext.getBean(CadastroCozinha.class);
+        CozinhaRepository cozinhas = applicationContext.getBean(CozinhaRepository.class);
 
-        beanCadastroCozinha.listar().forEach(p -> System.out.println(p.getNome()));
+        cozinhas.getAll().forEach(p -> System.out.println(p.getNome()));
 
         Cozinha cozinha = new Cozinha();
         cozinha.setId(1L);
         cozinha.setNome("Tailandesa");
 
-         Cozinha cozinha1 = beanCadastroCozinha.getByIdCozinha(cozinha.getId());
+         Cozinha cozinha1 = cozinhas.getById(cozinha.getId());
 
-        beanCadastroCozinha.removerCozinha(cozinha1);
+        cozinhas.remove(cozinha1);
     }
 }
 
 //Ler: https://blog.algaworks.com/tutorial-jpa/
 
-//Continuar em: Conhecendo o padrão Aggregate do DDD
+//Continuar em: 3.14. Conhecendo e implementando o padrão Repository
