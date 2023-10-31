@@ -1,8 +1,6 @@
 package com.algafood.algafoodapi.infrastructure.repository;
 
-import com.algafood.algafoodapi.domain.model.Cozinha;
 import com.algafood.algafoodapi.domain.model.Restaurante;
-import com.algafood.algafoodapi.domain.repository.CozinhaRepository;
 import com.algafood.algafoodapi.domain.repository.RestauranteRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
