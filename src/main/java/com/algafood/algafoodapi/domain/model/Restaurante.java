@@ -20,4 +20,8 @@ public class Restaurante {
 
     @Column(name = "taxa_frete", precision = 4, scale = 2)
     private BigDecimal taxaFrete;
+
+    @ManyToOne
+    @JoinColumn(name = "cozinha_id")
+    private Cozinha cozinha;
 }
