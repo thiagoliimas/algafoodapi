@@ -1,9 +1,7 @@
 package com.algafood.algafoodapi.infrastructure.repository;
 
-import com.algafood.algafoodapi.domain.model.FormaPagamento;
 import com.algafood.algafoodapi.domain.model.Permissao;
 import com.algafood.algafoodapi.domain.repository.PermissaoRepository;
-import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,6 @@
 package com.algafood.algafoodapi.jpa.formapagamento;
 
 import com.algafood.algafoodapi.AlgafoodApiApplication;
-import com.algafood.algafoodapi.domain.repository.CozinhaRepository;
 import com.algafood.algafoodapi.domain.repository.FormaPagamentoRepository;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;

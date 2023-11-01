@@ -1,9 +1,7 @@
 package com.algafood.algafoodapi.jpa.permissao;
 
 import com.algafood.algafoodapi.AlgafoodApiApplication;
-import com.algafood.algafoodapi.domain.model.Cozinha;
 import com.algafood.algafoodapi.domain.model.Permissao;
-import com.algafood.algafoodapi.domain.repository.CozinhaRepository;
 import com.algafood.algafoodapi.domain.repository.PermissaoRepository;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -31,5 +29,6 @@ public class CadastroPermissaoMain {
 
         System.out.println(cozinhaCriada1.getNome());
 
+//        Criar model, repository, repositoryImpl e a parte de teste de estado e cidade da aula 3.20
     }
 }
