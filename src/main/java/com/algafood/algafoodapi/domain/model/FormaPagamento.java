@@ -6,21 +6,18 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "cozinha")
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "forma_pagamento")
 @EqualsAndHashCode(of = "id")
-public class Cozinha {
+public class FormaPagamento {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome", length = 30, nullable = false)
-    private String nome;
+    @Column(length = 30, name = "descricao")
+    private String descricao;
 }
-
-//Continuar a partir daqui: 3.5. Criando as tabelas do banco a partir das entidades
