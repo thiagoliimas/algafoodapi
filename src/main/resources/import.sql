@@ -10,3 +10,6 @@ insert into restaurante (nome, taxa_frete, cozinha_id) values ('Guttos', 3.00, 1
 
 insert into forma_pagamento (descricao) values ('Pix');
 insert into forma_pagamento (descricao) values ('Cartão');
+
+insert into permissao (nome) values ('Administrador');
+insert into permissao (nome) values ('Auditor');
