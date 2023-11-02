@@ -13,3 +13,9 @@ insert into forma_pagamento (descricao) values ('Cartão');
 
 insert into permissao (nome) values ('Administrador');
 insert into permissao (nome) values ('Auditor');
+
+insert into estado (nome, sigla) values ('Ceará', 'CE');
+insert into estado (nome, sigla) values ('Rio Grande do Norte', 'RN');
+
+insert into cidade (nome, estado_id) values ('Russas', 1);
+insert into cidade (nome, estado_id) values ('Mossoró', 2);
