@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,11 +27,13 @@ public class EstadoRepositoryImpl implements EstadoRepository {
     }
 
     @Override
+    @Transactional
     public Estado add(Estado estado) {
         return manager.merge(estado);
     }
 
     @Override
+    @Transactional
     public void remove(Estado estado) {
         estado = getById(estado.getId());
         manager.remove(estado);
